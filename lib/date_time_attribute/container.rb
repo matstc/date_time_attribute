@@ -100,7 +100,7 @@ module DateTimeAttribute
     def parse(val)
       case val
         when String
-          self.class.parser.parse(val)
+          self.class.parser.parse(val) rescue nil
         when Date, Time, DateTime, ActiveSupport::TimeWithZone
           val
         when nil
